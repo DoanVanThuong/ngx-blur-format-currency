@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class NgxBlurFormatCurrencyComponent implements OnInit {
-  title = 'hello world';
+  title = 'hello world ';
 
   constructor() { }
 
