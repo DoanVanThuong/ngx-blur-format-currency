@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-blur-format-currency": [
+        "dist/ngx-blur-format-currency"
+      ],
+      "ngx-blur-format-currency/*": [
+        "dist/ngx-blur-format-currency/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
