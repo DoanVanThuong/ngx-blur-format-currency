@@ -5,7 +5,7 @@
   "projects": {
     "ngx-blur-format-currency": {
       "projectType": "library",
-      "root": "projects/ngx-blur-format-currency",
+      "root": "/",
       "sourceRoot": "projects/ngx-blur-format-currency/src",
       "prefix": "lib",
       "architect": {
@@ -37,6 +37,125 @@
           }
         }
       }
-    }},
+    },
+    "ngx-blur-format-currency-example": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/ngx-blur-format-currency-example",
+      "sourceRoot": "projects/ngx-blur-format-currency-example/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ngx-blur-format-currency-example",
+            "index": "projects/ngx-blur-format-currency-example/src/index.html",
+            "main": "projects/ngx-blur-format-currency-example/src/main.ts",
+            "polyfills": "projects/ngx-blur-format-currency-example/src/polyfills.ts",
+            "tsConfig": "projects/ngx-blur-format-currency-example/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/ngx-blur-format-currency-example/src/favicon.ico",
+              "projects/ngx-blur-format-currency-example/src/assets"
+            ],
+            "styles": [
+              "projects/ngx-blur-format-currency-example/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngx-blur-format-currency-example/src/environments/environment.ts",
+                  "with": "projects/ngx-blur-format-currency-example/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ngx-blur-format-currency-example:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ngx-blur-format-currency-example:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngx-blur-format-currency-example:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-blur-format-currency-example/src/test.ts",
+            "polyfills": "projects/ngx-blur-format-currency-example/src/polyfills.ts",
+            "tsConfig": "projects/ngx-blur-format-currency-example/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-blur-format-currency-example/karma.conf.js",
+            "assets": [
+              "projects/ngx-blur-format-currency-example/src/favicon.ico",
+              "projects/ngx-blur-format-currency-example/src/assets"
+            ],
+            "styles": [
+              "projects/ngx-blur-format-currency-example/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-blur-format-currency-example/tsconfig.app.json",
+              "projects/ngx-blur-format-currency-example/tsconfig.spec.json",
+              "projects/ngx-blur-format-currency-example/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ngx-blur-format-currency-example/e2e/protractor.conf.js",
+            "devServerTarget": "ngx-blur-format-currency-example:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ngx-blur-format-currency-example:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
   "defaultProject": "ngx-blur-format-currency"
 }

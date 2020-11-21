@@ -1,15 +1,23 @@
 {
   "name": "ngx-blur-format-currency",
-  "version": "0.0.0",
+  "version": "0.0.8",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DoanVanThuong/ngx-blur-format-currency.git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build ngx-blur-format-currency-example",
+    "build:lib": "ng build ngx-blur-format-currency",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~8.2.8",
     "@angular/common": "~8.2.8",
